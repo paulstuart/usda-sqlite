@@ -54,7 +54,8 @@ create table langual (
 
 drop table if exists langdesc;
 create table langdesc (
-    Factor_Code char(5),        -- The LanguaL factor from the Thesaurus. Only those codes used to factor the foods contained in the LanguaL Factor file are included
+    Factor_Code char(5),        -- The LanguaL factor from the Thesaurus. 
+                                -- Only those codes used to factor the foods contained in the LanguaL Factor file are included
     Description varchar(140)    -- The description of the LanguaL Factor Code from the thesaurus.
 );
 
@@ -68,14 +69,16 @@ create table nut_data (
     Nutr_Val number,        -- Amount in 100 grams, edible portion
     Num_Data_Pts number,    -- Number of data points is the number of analyses used to calculate the nutrient value. 
                             -- If the number of data points is 0, the value was calculated or imputed.
-    Std_Error number,       -- Standard error of the mean. Null if cannot be calculated. The standard error is also not given if the number of data points is less than three.
+    Std_Error number,       -- Standard error of the mean. Null if cannot be calculated. 
+                            -- The standard error is also not given if the number of data points is less than three.
     Src_Cd char(2),         -- Code indicating type of data.
     Deriv_Cd char(4),       -- Data Derivation Code giving specific information on how the value is determined. 
                             -- This field is populated only for items added or updated starting with SR14. 
                             -- This field may not be populated if older records were used in the calculation of the mean value.
-    Ref_NDB_No char(5),     -- NDB number of the item used to calculate a missing value. Populated only for items added or updated starting with SR14.
+    Ref_NDB_No char(5),     -- NDB number of the item used to calculate a missing value. 
+                            -- Populated only for items added or updated starting with SR14.
     Add_Nutr_Mark char(1),  -- Indicates a vitamin or mineral added for fortification or enrichment. 
-                            -- This field is populated for ready-to- eat breakfast cereals and many brand-name hot cereals in food group 08.
+                            -- This field is populated for ready-to-eat breakfast cereals and many brand-name hot cereals in food group 08.
     Num_Studies number,     -- Number of studies.
     Min number,             -- Minimum value.
     Max number,             -- Maximum value.
